@@ -1,0 +1,30 @@
+
+nav{
+    color: white;
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 100px;
+    .logo{
+        img{
+            height: 50px;
+        }
+    }
+    .navlinks{
+        display: flex;
+        gap: 2rem;
+        a{
+            
+            font-weight: 600;
+        }
+    }
+    .connect{
+        display: flex;
+        gap: 1.5rem;
+        img{
+            height: 40px;
+        }
+    }
+}

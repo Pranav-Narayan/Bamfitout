@@ -1,0 +1,28 @@
+@use "../../Styles/style.scss" as *;
+.home{
+    color: white;
+    background-image:url('../../public/Wallpaper2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    padding: 0 100px;
+    h1{
+        @include changaOne;
+        font-size: 60px;
+        letter-spacing: 4px;
+        text-transform: capitalize;
+        text-shadow: 2px 2px 5px black;
+        font-weight: 700;
+        width: 50%;
+    }
+    button{
+        @include Button;
+    }
+}

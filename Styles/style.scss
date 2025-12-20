@@ -1,0 +1,16 @@
+@use "./Variables" as *;
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
+
+@mixin changaOne($weight:$font-weight) {
+  font-family: 'Changa One', cursive;
+  font-weight: $weight;
+}
+
+@mixin Button{
+    background-color: orange;
+    color: white;
+    padding: 8px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+}

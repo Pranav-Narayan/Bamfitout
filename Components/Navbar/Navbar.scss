@@ -1,5 +1,6 @@
+@use "../../Styles/style.scss" as *;
 
-nav{
+nav {
     color: white;
     position: relative;
     z-index: 1000;
@@ -7,24 +8,48 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 30px 100px;
-    .logo{
-        img{
+    @include container;
+    
+    .logo {
+        img {
             height: 50px;
         }
     }
-    .navlinks{
+
+    .navlinks {
         display: flex;
         gap: 2rem;
-        a{
-            
+
+        @include respond(lg) {
+            gap: 1rem;
+        }
+
+        @include respond(md) {
+            display: none;
+        }
+
+        a {
+
             font-weight: 600;
         }
     }
-    .connect{
+
+    .connect {
         display: flex;
         gap: 1.5rem;
-        img{
+
+        @include respond(md) {
+            display: none;
+        }
+
+        img {
             height: 40px;
+        }
+    }
+    .hamburger{
+        display: none;
+        @include respond(md){
+            display: flex;
         }
     }
 }

@@ -1,5 +1,7 @@
 import React from 'react'
+import { FaBars } from "react-icons/fa6";
 import './Navbar.scss'
+
 
 const Navbar = () => {
     return (
@@ -18,6 +20,9 @@ const Navbar = () => {
             <div className='connect'>
                 <img src="/Icons/telephone.png" alt=""/>
                 <img src="/Icons/whatsapp.png" alt=""/>
+            </div>
+            <div className='hamburger'>
+                <FaBars className='text-3xl'/>
             </div>
         </nav>
     )

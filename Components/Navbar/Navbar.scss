@@ -9,7 +9,7 @@ nav {
     justify-content: space-between;
     padding: 30px 100px;
     @include container;
-    
+
     .logo {
         img {
             height: 50px;
@@ -29,8 +29,20 @@ nav {
         }
 
         a {
-
+            position: relative;
             font-weight: 600;
+        }
+
+        a.active::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.499);
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
         }
     }
 
@@ -46,9 +58,11 @@ nav {
             height: 40px;
         }
     }
-    .hamburger{
+
+    .hamburger {
         display: none;
-        @include respond(md){
+
+        @include respond(md) {
             display: flex;
         }
     }

@@ -1,8 +1,8 @@
 @use "./Variables" as *;
-@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
-@mixin changaOne($weight:$font-weight) {
-  font-family: 'Changa One', cursive;
+@mixin AlfaSlabOne($weight:$font-weight) {
+  font-family: 'Alfa Slab One', cursive;
   font-weight: $weight;
 }
 

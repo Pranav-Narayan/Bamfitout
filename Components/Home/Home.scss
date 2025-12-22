@@ -11,6 +11,10 @@
     padding: 0 100px;
     @include container;
 
+    @include respond(sm){
+        height: 80vh;
+    }
+
     .bg {
         position: absolute;
         z-index: -1;
@@ -22,55 +26,84 @@
         background-position: bottom;
     }
 
-    .content {
+    .container {
         display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
 
-        h1 {
-            @include changaOne;
-            font-size: 60px;
-            letter-spacing: 4px;
-            text-transform: capitalize;
-            text-shadow: 2px 2px 5px black;
-            font-weight: 700;
-            width: 70%;
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 2rem;
 
-            @include respond(lg) {
-                width: 75%;
-                font-size: 50px;
-            }
-
-            @include respond(md) {
-                width: 85%;
-                font-size: 45px;
-            }
-
-            @include respond(sm) {
-                width: 100%;
-                font-size: 30px;
+            h1 {
+                @include AlfaSlabOne;
+                font-size: 60px;
+                letter-spacing: 7px;
+                text-transform: capitalize;
+                text-shadow: 2px 2px 5px black;
                 font-weight: 500;
+                width: 70%;
+
+                @include respond(lg) {
+                    width: 75%;
+                    font-size: 50px;
+                }
+
+                @include respond(md) {
+                    width: 85%;
+                    font-size: 45px;
+                }
+
+                @include respond(sm) {
+                    width: 100%;
+                    font-size: 30px;
+                    font-weight: 500;
+                }
+            }
+
+            button {
+                @include Button;
             }
         }
 
-        button {
-            @include Button;
+        .changeSlide {
+            opacity: 0.5;
+            background-color: black;
+            padding: 10px;
+            border-radius: 50%;
+
+            @include respond(sm) {
+                display: none;
+            }
+
+            .icon {
+                font-size: 25px;
+            }
         }
     }
 
-    .changeSlide {
-        opacity: 0.5;
-        background-color: black;
-        padding: 10px;
-        border-radius: 50%;
-
-        @include respond(sm) {
-            display: none;
-        }
-
-        .icon {
-            font-size: 25px;
+    .indicators {
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        button{
+            cursor: pointer;
+            opacity: 0.5;
+            width: 13px;
+            height:13px;
+            border-radius: 50px;
+            background-color: white;
+            margin: 0 5px;
+            border: 2px solid white;
+            transition: 0.5s;
+            &.active{
+                border: 2px solid white;
+                background-color: black;
+            }  
         }
     }
 }

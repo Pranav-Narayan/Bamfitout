@@ -30,6 +30,7 @@ const Home = () => {
         );
 
     const current = heroSlides[index];
+    console.log(index)
 
     return (
         <div className='home'>
@@ -37,35 +38,47 @@ const Home = () => {
                 <motion.div
                     key={current.image}
                     className='bg'
-                    initial={{ opacity: 0, scale: 1.05 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 1.05 }}
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 1.1 }}
                     transition={{ duration: 1 }}
                     style={{ backgroundImage: `url(${current.image})` }}
                 />
             </AnimatePresence>
-            <button onClick={prevSlide} className='changeSlide'> <FaArrowLeft className='icon' /></button>
-            <div className='content'>
-                <AnimatePresence mode="wait">
-                    <motion.h1
-                        key={current.title}
-                        initial={{ y: 40, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -40, opacity: 0 }}
-                        transition={{ duration: 0.7 }}
-                    >
-                        {current.title}
-                    </motion.h1>
-                    <button
-                        initial={{ y: 40, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -40, opacity: 0 }}
-                        transition={{ duration: 0.7 }}
-                    >Connect Us</button>
-                </AnimatePresence>
+            <div className='container'>
+                <button onClick={prevSlide} className='changeSlide'> <FaArrowLeft className='icon' /></button>
+                <div className='content'>
+                    <AnimatePresence mode="wait">
+                        <motion.h1
+                            key={current.title}
+                            initial={{ y: 40, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: -40, opacity: 0 }}
+                            transition={{ duration: 0.7 }}
+                        >
+                            {current.title}
+                        </motion.h1>
+                        <button
+                            initial={{ y: 40, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: -40, opacity: 0 }}
+                            transition={{ duration: 0.7 }}
+                        >Connect Us</button>
+                    </AnimatePresence>
 
+                </div>
+                <button onClick={nextSlide} className='changeSlide'> <FaArrowRight className='icon' /> </button>
             </div>
-            <button onClick={nextSlide} className='changeSlide'> <FaArrowRight className='icon' /> </button>
+            <div className="indicators">
+                {heroSlides.map((item, i) => (
+                        <button
+                            key={i}
+                            className={`${ index == i
+                                ? "active" : ""}`}
+                            onClick={()=> setIndex(i)}
+                        ></button>
+                    ))}
+            </div>
         </div>
     )
 }

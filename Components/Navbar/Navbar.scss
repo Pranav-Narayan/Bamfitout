@@ -1,15 +1,16 @@
 @use "../../Styles/style.scss" as *;
 
 nav {
+    width: 100%;
     color: white;
-    position: relative;
+    position: fixed;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 100px;
+    padding: 10px 100px;
     @include container;
-
+    transition: 0.5s;
     .logo {
         img {
             height: 50px;
@@ -66,4 +67,11 @@ nav {
             display: flex;
         }
     }
+}
+
+// Styles after navbar scroll 
+
+nav.scrolled {
+    background: grey;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, .1);
 }

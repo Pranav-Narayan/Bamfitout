@@ -1,12 +1,18 @@
 @use "./Variables" as *;
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&display=swap');
 
-@mixin AlfaSlabOne($weight:$font-weight) {
-  font-family: 'Alfa Slab One', cursive;
-  font-weight: $weight;
+@mixin LilitaOne($weight: $font-weight) {
+    font-family: 'Lilita One';
+    font-weight: $weight;
 }
 
-@mixin Button{
+@mixin arvo($weight: $font-weight) {
+    font-family: 'Arvo';
+    font-weight: $weight;
+}
+
+
+@mixin Button {
     background-color: orange;
     color: white;
     padding: 8px 15px;
@@ -15,14 +21,29 @@
     border-radius: 10px;
 }
 
-@mixin container{
-  @include respond(xl) {
+@mixin container {
+    padding: 10px 100px;
+
+    @include respond(xl) {
         padding: 30px 75px;
     }
 
     @include respond(lg) {
         padding: 30px;
     }
+}
+
+@mixin pageHead() {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.65);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+@mixin componentHeading() {
+    font-size: 45px;
+    text-transform: capitalize;
+    font-weight: 900;
 }
 
 @mixin respond($breakpoint) {
@@ -49,6 +70,7 @@
             @content;
         }
     }
+
     @else if $breakpoint ==xxl {
         @media (max-width:1400px) {
             @content;

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { heroSlides } from "../../Data/HomeData.js";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
+import Navbar from '../Navbar/Navbar.jsx';
 import './Home.scss'
 
 const Home = () => {
@@ -65,19 +66,18 @@ const Home = () => {
                             transition={{ duration: 0.7 }}
                         >Connect Us</button>
                     </AnimatePresence>
-
                 </div>
                 <button onClick={nextSlide} className='changeSlide'> <FaArrowRight className='icon' /> </button>
             </div>
             <div className="indicators">
                 {heroSlides.map((item, i) => (
-                        <button
-                            key={i}
-                            className={`${ index == i
-                                ? "active" : ""}`}
-                            onClick={()=> setIndex(i)}
-                        ></button>
-                    ))}
+                    <button
+                        key={i}
+                        className={`${index == i
+                            ? "active" : ""}`}
+                        onClick={() => setIndex(i)}
+                    ></button>
+                ))}
             </div>
         </div>
     )

@@ -1,17 +1,20 @@
 export const heroSlides = [
   {
     id: 1,
-    title: "Creating Spaces That Move People",
+    title1: "Creating Spaces",
+    title2:"That Move People",
     image: "/Wallpaper1.avif",
   },
   {
     id: 2,
-    title: "Designing Experiences That Inspire",
+    title1: "Designing Experiences",
+    title2:"That Inspire",
     image: "/Wallpaper2.avif",
   },
   {
     id: 3,
-    title: "Interiors Crafted to Perfection",
+    title1: "Interiors Crafted",
+    title2: "to Perfection",
     image: "/Wallpaper3.avif",
   },
 ];

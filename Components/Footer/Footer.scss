@@ -3,7 +3,14 @@
 .footer {
     background-color: rgb(77, 77, 77);
     color: white;
-
+    .imagefooter{
+        display: flex;
+        img{
+            width: 25%;
+            height: 150px;
+            object-fit: cover;
+        }
+    }
     .first {
         @include container;
         display: flex;

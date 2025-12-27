@@ -1,0 +1,103 @@
+@use "../../Styles/style.scss" as *;
+
+.contact {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            @include pageHead;
+        }
+
+        h2 {
+            @include componentHeading;
+        }
+    }
+
+    .connect {
+        display: flex;
+
+        .left {
+            flex: 1;
+
+            iframe {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .right {
+            padding: 40px 0;
+            flex: 1;
+            color: white;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+
+            h1 {
+                text-align: center;
+                font-size: 40px;
+                font-weight: 700;
+            }
+
+            .input {
+
+                padding: 0 100px;
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+            }
+
+            input,
+            textarea,
+            span {
+                outline: none;
+                padding: 5px;
+                font-size: 18px;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.572);
+                &::placeholder{
+                    font-size: 18px;
+                }
+            }
+
+            .phn {
+                padding: 0 100px;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+            }
+            .consent{
+                padding: 0 100px;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                input{
+                    transform: scale(1.5);
+                }
+            }
+            .buttons {
+                padding: 0 100px;
+                display: flex;
+                gap: 2rem;
+
+                button {
+                    background-color: orange;
+                    color: white;
+                    padding: 8px 15px;
+                    border-radius: 10px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

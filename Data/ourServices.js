@@ -1,67 +1,67 @@
 export const services = [
     {
         id: 1,
-        image: "",
+        image: "/kitchenRenovation.avif",
         name: "Kitchen Renovation",
         desc:""
     },
     {
         id: 2,
-        image: "",
+        image: "/flooring.avif",
         name: "Flooring Works",
         desc:""
     },
     {
         id: 3,
-        image: "",
+        image: "/falseCeiling.avif",
         name: "False ceiling",
         desc:""
     },
     {
         id: 4,
-        image: "",
+        image: "/electricalworks.jpeg",
         name: "Electrical Works",
         desc:""
     },
     {
         id: 5,
-        image: "",
+        image: "/bathroomRenovation.avif",
         name: "Bathroom Renovation",
         desc:""
     },
     {
         id: 6,
-        image: "",
+        image: "/Carpenterworks.avif",
         name: "Carpentry Works",
         desc:""
     },
     {
         id: 7,
-        image: "",
+        image: "/glasspartitions.avif",
         name: "Glass Partitions",
         desc:""
     },
     {
         id: 8,
-        image: "Painting",
-        name: "",
+        image: "/Painting.avif",
+        name: "Painting",
         desc:""
     },
     {
         id: 9,
-        image: "",
+        image: "/Waterproofing.avif",
         name: "Waterproofing",
         desc:""
     },
     {
         id: 10,
-        image: "",
-        name: "Restaurent/ Cafeteria Setting",
+        image: "/restaurantSetting.avif",
+        name: "Restaurent Setting",
         desc:""
     },
     {
         id: 11,
-        image: "",
+        image: "/Retailoutlets.avif",
         name: "Retail outlets",
         desc:""
     },

@@ -7,6 +7,13 @@ import { FaLocationDot } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div className='text-black relative z-50 footer'>
+      <div className="imagefooter">
+        <img src="falseCeiling.avif" alt=""/>
+        <img src="electricalworks.jpeg" alt=""/>
+        <img src="flooring.avif" alt=""/>
+        <img src="about.avif" alt=""/>
+        <img src="kitchenRenovation.avif" alt=""/>
+      </div>
       <div className="first">
         <div className='company'>
           <img src="/Logo.png" alt="" className='logo' />

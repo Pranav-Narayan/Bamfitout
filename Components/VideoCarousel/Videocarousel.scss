@@ -1,0 +1,22 @@
+@use "../../Styles/style.scss" as *;
+
+.gallery{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+
+    p{
+        @include pageHead;
+        text-align: center
+    }
+    h2{
+        @include componentHeading;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    .changeSlide{
+        display: flex;
+        gap: 2rem;
+        
+    }
+}

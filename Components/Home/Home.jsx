@@ -50,22 +50,22 @@ const Home = () => {
                 <button onClick={prevSlide} className='changeSlide'> <FaArrowLeft className='icon' /></button>
                 <div className='content'>
                     <AnimatePresence mode="wait">
-                        <motion.h1
-                            key={current.title}
+                        <motion.div
+                            key={current.title1}
                             initial={{ y: 40, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: -40, opacity: 0 }}
                             transition={{ duration: 0.7 }}
                         >
-                            {current.title}
-                        </motion.h1>
-                        <button
-                            initial={{ y: 40, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -40, opacity: 0 }}
-                            transition={{ duration: 0.7 }}
-                        >Connect Us</button>
+                            <h1>
+                                {current.title1}
+                            </h1>
+                            <h1>
+                                {current.title2}
+                            </h1>
+                        </motion.div>
                     </AnimatePresence>
+                    <button>Connect Us</button>
                 </div>
                 <button onClick={nextSlide} className='changeSlide'> <FaArrowRight className='icon' /> </button>
             </div>

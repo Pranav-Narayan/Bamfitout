@@ -15,6 +15,6 @@ export const heroSlides = [
     id: 3,
     title1: "Interiors Crafted",
     title2: "to Perfection",
-    image: "/Wallpaper4.avif",
+    image: "/Wallpaper3.avif",
   },
 ];

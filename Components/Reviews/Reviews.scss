@@ -1,0 +1,29 @@
+@use "../../Styles/style.scss" as *;
+
+.reviews{
+    .container{
+        .box{
+            height: 100%;
+            @include container;
+            span{
+                @include pageHead;
+                color: white;
+            }
+            h2{
+                @include componentHeading;
+            }
+            .text{
+                height: 50%;
+                // background-color: rgb(229, 143, 31);
+                background-color: rgb(28, 194, 28);
+                overflow: hidden;
+                .content{
+                    height: 80%;
+                }
+                .dotbar{
+                    height: 20%;
+                }
+            }
+        }
+    }
+}

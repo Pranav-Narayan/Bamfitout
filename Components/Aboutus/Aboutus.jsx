@@ -18,13 +18,12 @@ const Notes = [
     },
     {
         id: 2,
-        buttonValue: "Events",
-        description:
-            "We design and manage memorable events that reflect your vision, style, and purpose. From intimate celebrations to large corporate gatherings, every detail is planned with care and creativity. Our team ensures seamless execution, beautiful decor, and unforgettable guest experiences.",
+        buttonValue: "Office Fit-Out",
+        description: "We create functional, stylish, and efficient office environments designed to enhance productivity and reflect your brand identity. From space planning to complete interior execution, our team ensures a smooth transformation process with high-quality finishes and professional project management.",
         properties: [
-            "Creative planning and concept execution",
-            "Seamless coordination and on-time delivery",
-            "Attention to guest experience and detailing"
+            "Smart space planning for better workflow",
+            "Modern and functional interior designs",
+            "On-time project delivery with quality execution"
         ],
         image: "/about2.avif"
     },

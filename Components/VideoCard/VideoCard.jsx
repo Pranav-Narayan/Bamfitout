@@ -45,7 +45,7 @@ const VideoCard = ({ videoId, title, isPlaying, onPlay, onStop }) => {
               aria-label={`Play ${title}`}
             >
               <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110">
-                <Play className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" />
+                <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
               </div>
             </button>
           </>

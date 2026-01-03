@@ -1,10 +1,10 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image.js';
 import { heroSlides } from "../../Data/HomeData.js";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
-import Navbar from '../Navbar/Navbar.jsx';
 import './Home.scss'
 
 const Home = () => {
@@ -43,8 +43,13 @@ const Home = () => {
                     animate={{ scale: 1 }}
                     exit={{ scale: 1.1 }}
                     transition={{ duration: 1 }}
-                    style={{ backgroundImage: `url(${current.image})` }}
-                />
+                >
+                    <Image
+                        src={current.image}
+                        alt=""
+                        fill
+                        className='img'></Image>
+                </motion.div>
             </AnimatePresence>
             <div className='container'>
                 <button onClick={prevSlide} className='changeSlide'> <FaArrowLeft className='icon' /></button>

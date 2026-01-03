@@ -4,43 +4,88 @@ import React, { useState, useEffect } from 'react'
 import { FaBars } from "react-icons/fa6";
 import './Navbar.scss'
 
-
 const Navbar = () => {
-
     const [scrolled, setScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState('home'); 
+
+    const links = [
+        { text: 'Home', id: 'home' },
+        { text: 'About', id: 'about' },
+        { text: 'Services', id: 'services' },
+        { text: 'Video Gallery', id: 'video-gallery' },
+        { text: 'Reviews', id: 'reviews' },
+        { text: 'Contact', id: 'contact' }
+    ];
 
     useEffect(() => {
-        const onScroll = () => {
-            if (window.scrollY > 0) setScrolled(true);
-            else setScrolled(false);
+        // Handle navbar background on scroll
+        const handleScrollBg = () => {
+            setScrolled(window.scrollY > 0);
         };
 
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
+        // Handle active section based on scroll position
+        const handleActiveSection = () => {
+            const sections = links.map(link => document.getElementById(link.id));
+            
+            let current = 'home';
+
+            // Loop from bottom to top to prioritize lower sections
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) { // section is near viewport center/top
+                        current = links[i].id;
+                        break;
+                    }
+                }
+            }
+
+            setActiveSection(current);
+        };
+
+        // Initial check
+        handleScrollBg();
+        handleActiveSection();
+
+        window.addEventListener('scroll', handleScrollBg);
+        window.addEventListener('scroll', handleActiveSection);
+
+        return () => {
+            window.removeEventListener('scroll', handleScrollBg);
+            window.removeEventListener('scroll', handleActiveSection);
+        };
     }, []);
 
     return (
-        <nav className={scrolled ? "scrolled" : ""}>
+        <nav className={scrolled ? "scrolled" : "transparent"}>
             <div className="logo">
-                <img src="./Logo.png" alt="" />
+                <img src="./Logo.png" alt="Logo" />
             </div>
+
             <div className="navlinks">
-                <a href="" className='active'>Home</a>
-                <a href="">About</a>
-                <a href="">Services</a>
-                <a href="">Video Gallery</a>
-                <a href="">Portfolio</a>
-                <a href="">Contact</a>
+                {links.map((link) => (
+                    <a
+                        key={link.id}
+                        href={`#${link.id}`}
+                        className={activeSection === link.id ? 'active' : ''}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById(link.id)?.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }}
+                    >
+                        {link.text}
+                    </a>
+                ))}
             </div>
-            <div className='connect'>
-                <img src="/Icons/telephone.png" alt="" />
-                <img src="/Icons/whatsapp.png" alt="" />
-            </div>
-            <div className='hamburger'>
-                <FaBars className='text-3xl' />
+
+            <div className="hamburger">
+                <FaBars className="text-3xl" />
             </div>
         </nav>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;

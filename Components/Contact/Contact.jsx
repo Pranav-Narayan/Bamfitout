@@ -21,7 +21,7 @@ const Contact = () => {
                         <input type="email" placeholder='Email' />
                     </div>
                     <div className='phn'>
-                        <span>+971 </span>
+                        <span>🇦🇪 +971 </span>
                         <input type="text" placeholder='phone*' />
                     </div>
                     <div className='input'>
@@ -33,7 +33,7 @@ const Contact = () => {
                     </div>
                     <div className='buttons'>
                         <button>Send Message</button>
-                        <button>Call Us</button>
+                        <button>Make a Call</button>
                     </div>
                 </div>
             </div>

@@ -52,7 +52,7 @@ const VideoCarousel = () => {
     }, [emblaApi, onSelect]);
 
     return (
-        <section className="w-full px-16 py-8 gallery">
+        <section className="w-full px-16 pt-20 gallery">
             <p>Video Gallery</p>
             <h2>
                 Featured Videos

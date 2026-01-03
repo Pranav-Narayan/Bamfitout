@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="first">
         <div className='company'>
           <img src="/Logo.png" alt="" className='logo' />
-          <p>BAM Interiors & Events is a professional design and event solutions company dedicated to creating refined interior spaces and well-executed events. We focus on quality, precision, and client satisfaction, delivering thoughtful results with a commitment to excellence.</p>
+          <p>BAM Interiors is a professional design and event solutions company dedicated to creating refined interior spaces and well-executed events. We focus on quality, precision, and client satisfaction, delivering thoughtful results with a commitment to excellence.</p>
           <div className='socials'>
             <img src="/Icons/instagram.png" alt="" />
             <img src="/Icons/facebook.png" alt="" />
@@ -48,8 +48,8 @@ const Footer = () => {
           <h2>Connect Us</h2>
           <div>
             <p><IoCallSharp />Phone</p>
-            <p>+971 524383613</p>
-            <p>+971 524383613</p>
+            <p>🇦🇪 +971 524383613</p>
+            <p>🇦🇪 +971 581104847</p>
           </div>
           <div>
             <p><MdEmail />Email</p>
@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
           <div>
             <p><FaLocationDot />Location</p>
-            <p>BAM INTERIORS & EVENTS, DUBAI</p>
+            <p>BAM INTERIORS , DUBAI</p>
           </div>
         </div>
       </div>

@@ -10,8 +10,8 @@ const VideoCard = ({ videoId, title, isPlaying, onPlay, onStop }) => {
   };
 
   return (
-    <div className="group relative rounded-xl overflow-hidden bg-card shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
-      <div className="aspect-4/3 relative">
+    <div className="group relative rounded-xl overflow-hidden bg-card transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+      <div className="aspect-4/5 sm:aspect-4/4 md:aspect-4/3 relative">
         {isPlaying ? (
           <>
             <iframe

@@ -1,9 +1,9 @@
-import { Nunito} from "next/font/google";
+import { Outfit} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 
-const nunito = Nunito({
+const inter = Outfit({
   subsets: ["latin"],
   weight: ["300", "400", "600", "700","800","900"]
 });
@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">  
-      <body className={nunito.className}>
+      <body className={inter.className}>
         <Navbar/>
         {children}
         <Footer/>

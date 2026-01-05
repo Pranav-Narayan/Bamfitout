@@ -52,7 +52,7 @@ const VideoCarousel = () => {
     }, [emblaApi, onSelect]);
 
     return (
-        <section className="w-full px-16 pt-20 gallery">
+        <section className="w-full px-6 sm:px-8 md:px-12 lg:px-14 xl:px-16 pt-6 sm:pt-10 md:pt-14 lg:pt-20 gallery">
             <p>Video Gallery</p>
             <h2>
                 Featured Videos
@@ -60,7 +60,7 @@ const VideoCarousel = () => {
 
             <div className="relative ">
                 <div ref={emblaRef} className="overflow-hidden">
-                    <div className="flex gap-4 md:gap-6">
+                    <div className="flex gap-3 md:gap-6">
                         {videos.map((video) => (
                             <div
                                 key={video.id}

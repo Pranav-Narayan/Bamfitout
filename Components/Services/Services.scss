@@ -1,257 +1,350 @@
 @use "../../Styles/style.scss" as *;
 
-.service {
-    @include container;
-    padding-top: 100px;
+$accent: hsl(35, 85%, 55%);
+$primary: hsl(220, 15%, 18%);
+$muted: hsl(220, 10%, 45%);
+$card-bg: hsl(220, 25%, 25%);
+$dot-inactive: hsl(220, 10%, 75%);
+$dot-active: $accent;
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$large: 1200px;
+
+.services {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  @media (max-width: $tablet) {
+    padding: 60px 16px;
+    gap: 2rem;
+  }
+
+  // Header Section
+  &__header {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
+    gap: 0.75rem;
+  }
 
-    .head {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+  &__subtitle {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $accent;
+    position: relative;
+    
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      height: 1px;
+      background: $accent;
+      
+      @media (max-width: $mobile) {
+        width: 24px;
+      }
+    }
+    
+    &::before {
+      right: calc(100% + 16px);
+    }
+    
+    &::after {
+      left: calc(100% + 16px);
+    }
+  }
 
-        p {
-            @include pageHead;
-        }
+  &__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    color: $primary;
+    line-height: 1.2;
+  }
 
-        h2 {
-            @include componentHeading;
-        }
+  // Carousel Container
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+
+    @media (max-width: $tablet) {
+      gap: 0;
+    }
+  }
+
+  // Navigation Buttons
+  &__nav-btn {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media (max-width: $tablet) {
+      display: none;
     }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 3rem;
-        width: auto;
-
-        button {
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: transparent;
-            border: none;
-            padding: 0;
-            outline: none;
-            flex-shrink: 0;
-
-            &:hover:not(.disabled) {
-                transform: scale(1.15);
-            }
-
-            &:active:not(.disabled) {
-                transform: scale(1.05);
-            }
-
-            &.disabled {
-                opacity: 0.3;
-                cursor: not-allowed;
-                pointer-events: none;
-            }
-
-            .circle {
-                position: absolute;
-                border: 2px solid black;
-                padding: 18px;
-                border-radius: 50%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                transition: all 0.3s ease;
-            }
-
-            &:hover:not(.disabled) .circle {
-                background-color: rgba(0, 0, 0, 0.05);
-                border-width: 3px;
-            }
-
-            .arrow {
-                font-size: 35px;
-                position: relative;
-                transition: all 0.3s ease;
-            }
-
-            .leftarrow {
-                left: 15px;
-            }
-
-            .rightarrow {
-                right: 15px;
-            }
-
-            &:hover:not(.disabled) .arrow {
-                color: #000;
-            }
-        }
-
-        .serviceBox {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-
-            .slideTrack {
-                display: flex;
-                gap: 2rem;
-                transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                will-change: transform;
-
-                .box {
-                    width: calc(25% - 1.5rem);
-                    min-width: calc(25% - 1.5rem);
-                    flex-shrink: 0;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                    transition: transform 0.3s ease;
-
-                    
-
-                    .img {
-                        position: relative;
-                        overflow: hidden;
-                        height: 300px;
-                        background-color: rgb(48, 48, 143);
-                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                        transition: box-shadow 0.3s ease;
-
-                        &:hover {
-                            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-                        }
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-                        }
-
-                        .imgBtn {
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            padding: 12px 24px;
-                            border-radius: 10px;
-                            border: none;
-                            background: black;
-                            color: white;
-                            cursor: pointer;
-                            opacity: 0;
-                            pointer-events: none;
-                            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                            font-weight: 600;
-                            letter-spacing: 0.5px;
-                            font-size: 14px;
-
-                            &:hover {
-                                background: #333;
-                                transform: translate(-50%, -50%) scale(1.05);
-                            }
-                        }
-
-                        &:hover img {
-                            opacity: 0.7;
-                            transform: scale(1.08);
-                        }
-
-                        &:hover .imgBtn {
-                            opacity: 1;
-                            pointer-events: auto;
-                        }
-                    }
-
-                    h3 {
-                        font-size: 20px;
-                        font-weight: 600;
-                        letter-spacing: 2px;
-                        color: rgba(0, 0, 0, 0.65);
-                        transition: color 0.3s ease;
-                    }
-
-                    &:hover h3 {
-                        color: rgba(0, 0, 0, 0.85);
-                    }
-                }
-            }
-        }
+    &:hover:not(:disabled) {
+      transform: scale(1.1);
     }
 
-    .progress-dots {
-        display: flex;
-        gap: 12px;
-        margin-top: 1rem;
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.2);
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 0;
-
-            &:hover {
-                background-color: rgba(0, 0, 0, 0.4);
-                transform: scale(1.2);
-            }
-
-            &.active {
-                background-color: rgba(0, 0, 0, 0.8);
-                width: 32px;
-                border-radius: 6px;
-            }
-        }
+    &:active:not(:disabled) {
+      transform: scale(0.95);
     }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    &-circle {
+      width: 56px;
+      height: 56px;
+      border: 2px solid $primary;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba($primary, 0.05);
+        border-color: $accent;
+      }
+    }
+
+    &-icon {
+      font-size: 1.25rem;
+      color: $primary;
+      transition: color 0.3s ease;
+    }
+
+    &:hover:not(:disabled) &-icon {
+      color: $accent;
+    }
+  }
+
+  // Carousel Track
+  &__carousel {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+    touch-action: pan-y pinch-zoom;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+
+    &.is-dragging {
+      transition: none;
+      cursor: grabbing;
+    }
+
+    @media (max-width: $tablet) {
+      gap: 1rem;
+    }
+  }
+
+  // Service Card
+  &__card {
+    flex-shrink: 0;
+    width: calc(25% - 1.125rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+
+    @media (max-width: $large) {
+      width: calc(33.333% - 1rem);
+    }
+
+    @media (max-width: $desktop) {
+      width: calc(50% - 0.75rem);
+    }
+
+    @media (max-width: $tablet) {
+      width: calc(50% - 0.5rem);
+    }
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+
+  &__card-image {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+    border-radius: 12px;
+    background: $card-bg;
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.3s ease;
+
+    @media (max-width: $tablet) {
+      height: 220px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: $mobile) {
+      height: 260px;
+    }
+
+    &:hover {
+      box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover img {
+      opacity: 0.75;
+      transform: scale(1.08);
+    }
+  }
+
+  &__card-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    background: $primary;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+
+    &:hover {
+      background: $accent;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .services__card-image:hover & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: $tablet) {
+      padding: 12px 20px;
+      font-size: 0.8rem;
+    }
+  }
+
+  &__card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba($primary, 0.75);
+    transition: color 0.3s ease;
+    padding: 0 4px;
+
+    @media (max-width: $tablet) {
+      font-size: 1rem;
+    }
+
+    .services__card:hover & {
+      color: $primary;
+    }
+  }
+
+  // Progress Dots
+  &__dots {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $dot-inactive;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba($primary, 0.5);
+      transform: scale(1.2);
+    }
+
+    &--active {
+      background: $dot-active;
+      width: 28px;
+      border-radius: 5px;
+    }
+  }
+
+  // Drag Hint (mobile only)
+  &__drag-hint {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    color: $muted;
+    font-size: 0.8rem;
+    margin-top: -0.5rem;
+
+    @media (max-width: $tablet) {
+      display: flex;
+    }
+
+    svg {
+      animation: swipe 1.5s ease-in-out infinite;
+    }
+  }
 }
 
-// Responsive adjustments
-@media (max-width: 1200px) {
-    .service .container .serviceBox .slideTrack .box {
-        width: calc(33.333% - 1.333rem);
-        min-width: calc(33.333% - 1.333rem);
-    }
-}
-
-@media (max-width: 768px) {
-    .service .container .serviceBox .slideTrack .box {
-        width: calc(50% - 1rem);
-        min-width: calc(50% - 1rem);
-    }
-
-    .service .container {
-        gap: 2rem;
-    }
-
-    .service .container button .arrow {
-        font-size: 28px;
-    }
-
-    .service .container button .circle {
-        padding: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .service .container .serviceBox .slideTrack .box {
-        width: 100%;
-        min-width: 100%;
-    }
-
-    .service .container {
-        gap: 1rem;
-    }
-
-    .service .container button .arrow {
-        font-size: 24px;
-    }
-
-    .service .container button .circle {
-        padding: 12px;
-    }
+@keyframes swipe {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
 }

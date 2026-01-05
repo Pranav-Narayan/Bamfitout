@@ -10,8 +10,8 @@ const page = () => {
   return (
     <div className='z-10 overflow-hidden'>
       <div className='fixed z-1000 right-8 bottom-32 flex flex-col gap-5'>
-        <img src="/Icons/telephone.png" alt="" className='h-12' />
-        <img src="/Icons/whatsapp.png" alt=""  className='h-12' />
+        <img src="/Icons/telephone.png" alt="" className='h-8 md:h-10 lg:h-12' />
+        <img src="/Icons/whatsapp.png" alt="" className='h-8 md:h-10 lg:h-12' />
       </div>
       <section id="home"><Home /></section>
       <section id="about"><Aboutus /></section>

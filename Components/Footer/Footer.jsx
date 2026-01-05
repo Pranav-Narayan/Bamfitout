@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import './Footer.scss'
 import { IoCallSharp } from "react-icons/io5";
@@ -5,14 +6,24 @@ import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 
 const Footer = () => {
+
+  const links = [
+    { text: 'Home', id: 'home' },
+    { text: 'About', id: 'about' },
+    { text: 'Services', id: 'services' },
+    { text: 'Video Gallery', id: 'video-gallery' },
+    { text: 'Reviews', id: 'reviews' },
+    { text: 'Contact', id: 'contact' }
+  ];
+
   return (
     <div className='text-black relative z-50 footer'>
       <div className="imagefooter">
-        <img src="falseCeiling.avif" alt=""/>
-        <img src="electricalworks.jpeg" alt=""/>
-        <img src="flooring.avif" alt=""/>
-        <img src="about.avif" alt=""/>
-        <img src="kitchenRenovation.avif" alt=""/>
+        <div><img src="falseCeiling.avif" alt="" /></div>
+        <div><img src="electricalworks.jpeg" alt="" /></div>
+        <div><img src="flooring.avif" alt="" /></div>
+        <div><img src="about.avif" alt="" /></div>
+        <div><img src="kitchenRenovation.avif" alt="" /></div>
       </div>
       <div className="first">
         <div className='company'>
@@ -24,40 +35,39 @@ const Footer = () => {
             <img src="/Icons/whatsapp.png" alt="" />
           </div>
         </div>
-        <div className='links'>
-          <h2>Links</h2>
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Video Gallery</li>
-          <li>Contact</li>
-        </div>
-        <div className='services'>
-          <h2>Services</h2>
-          <li>Kitchen Renovation</li>
-          <li>Flooring Works</li>
-          <li>False ceiling</li>
-          <li>Electrial Works</li>
-          <li>Bathroom Renovation</li>
-          <li>Carpentory Works</li>
-          <li>Glass Partitions</li>
-          <li>Painting</li>
-          <li>Water Proofing</li>
-        </div>
-        <div className='connect'>
-          <h2>Connect Us</h2>
-          <div>
-            <p><IoCallSharp />Phone</p>
-            <p>🇦🇪 +971 524383613</p>
-            <p>🇦🇪 +971 581104847</p>
+        <div className='options'>
+          <div className='links'>
+            <h2>Links</h2>
+            {links.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(link.id)?.scrollIntoView({
+                    behavior: 'smooth'
+                  });
+                }}
+              >
+                {link.text}
+              </a>
+            ))}
           </div>
-          <div>
-            <p><MdEmail />Email</p>
-            <p>Connect@bamfitout.com</p>
-          </div>
-          <div>
-            <p><FaLocationDot />Location</p>
-            <p>BAM INTERIORS , DUBAI</p>
+          <div className='connect'>
+            <h2>Connect Us</h2>
+            <div>
+              <p><IoCallSharp />Phone</p>
+              <p>🇦🇪 +971 524383613</p>
+              <p>🇦🇪 +971 581104847</p>
+            </div>
+            <div>
+              <p><MdEmail />Email</p>
+              <p>Connect@bamfitout.com</p>
+            </div>
+            <div>
+              <p><FaLocationDot />Location</p>
+              <p>BAM INTERIORS , DUBAI</p>
+            </div>
           </div>
         </div>
       </div>

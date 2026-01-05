@@ -15,14 +15,14 @@ const Contact = () => {
                 <div className="right">
                     <h1>Connect US</h1>
                     <div className='input'>
-                        <input type="text" placeholder='Name*' />
+                        <input type="text" placeholder='Name *' />
                     </div>
                     <div className='input'>
-                        <input type="email" placeholder='Email' />
+                        <input type="email" placeholder='Email *' />
                     </div>
                     <div className='phn'>
-                        <span>🇦🇪 +971 </span>
-                        <input type="text" placeholder='phone*' />
+                        <span>🇦🇪  +971 </span>
+                        <input type="text" placeholder='phone *' />
                     </div>
                     <div className='input'>
                         <textarea placeholder='Messages if any'></textarea>

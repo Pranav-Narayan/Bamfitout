@@ -11,6 +11,9 @@ nav {
     padding: 10px 100px;
     @include container;
     transition: 0.5s;
+    @include respond(md){
+        padding: 10px 50px;
+    }
     .logo {
         img {
             height: 50px;

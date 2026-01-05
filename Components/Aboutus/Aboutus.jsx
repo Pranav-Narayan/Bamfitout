@@ -78,7 +78,9 @@ const Aboutus = () => {
                             </div>
                         </div>
 
-                        <img src={activeItem.image} alt="" />
+                        <div className='imgbox'>
+                            <img src={activeItem.image} alt="" />
+                        </div>
                     </div>
                 </div>
             </div>

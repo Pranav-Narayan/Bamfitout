@@ -1,8 +1,8 @@
 @use "./Variables" as *;
-@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
 @mixin LilitaOne($weight: $font-weight) {
-    font-family: 'Lilita One';
+    font-family: 'Exo 2';
     font-weight: $weight;
 }
 
@@ -38,17 +38,41 @@
     color: rgba(0, 0, 0, 0.65);
     font-weight: 700;
     text-transform: capitalize;
+
+    @include respond(lg) {
+        font-size: 19px;
+    }
+
+    @include respond(md) {
+        font-size: 18px;
+    }
+
+    @include respond(sm) {
+        font-size: 16px;
+    }
 }
 
 @mixin componentHeading() {
     font-size: 45px;
     text-transform: capitalize;
     font-weight: 900;
+
+    @include respond(lg) {
+        font-size: 40px;
+    }
+
+    @include respond(md) {
+        font-size: 35px;
+    }
+
+    @include respond(sm) {
+        font-size: 30px;
+    }
 }
 
 @mixin respond($breakpoint) {
     @if $breakpoint ==sm {
-        @media (max-width:576px) {
+        @media (max-width:639px) {
             @content;
         }
     }

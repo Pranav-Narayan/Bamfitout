@@ -31,7 +31,6 @@ const Home = () => {
         );
 
     const current = heroSlides[index];
-    console.log(index)
 
     return (
         <div className='home'>
@@ -48,6 +47,7 @@ const Home = () => {
                         src={current.image}
                         alt=""
                         fill
+                        loading="eager"
                         className='img'></Image>
                 </motion.div>
             </AnimatePresence>

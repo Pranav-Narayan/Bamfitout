@@ -17,6 +17,8 @@
     .changeSlide{
         display: flex;
         gap: 2rem;
-        
+        @include respond(sm){
+            display: none;
+        }
     }
 }

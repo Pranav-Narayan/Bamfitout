@@ -4,14 +4,17 @@
     @include container;
     padding-top: 80px;
     display: flex;
-    align-items: stretch;
     gap: 2rem;
-
+    @include respond(md){
+        flex-direction: column;
+    }
     .left {
         flex: 1;
         background-color: orange;
         display: flex;
-
+        @include respond(md){
+            display: none;
+        }
         img {
             width: 100%;
             height: 100%;
@@ -28,11 +31,12 @@
         h5 {
             @include pageHead;
         }
-        
+
         h1 {
             @include componentHeading;
         }
-        p{
+
+        p {
             color: rgba(0, 0, 0, 0.75);
         }
 
@@ -40,9 +44,11 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
+
             .btns {
                 display: flex;
                 gap: 2rem;
+
                 button {
                     position: relative;
                     text-transform: capitalize;
@@ -65,26 +71,46 @@
                     }
                 }
             }
-            .container{
+
+            .container {
                 display: flex;
-                .content{
+                gap: 1rem;
+                @include respond(lg){
+                    flex-direction: column;
+                }
+                .content {
                     display: flex;
                     gap: 2rem;
                     flex-direction: column;
                     flex: 1;
-                    div{
+
+                    @include respond(xl) {
+                        flex: 1.5;
+                    }
+
+                    ;
+
+                    div {
                         display: flex;
                         gap: 0.5rem;
                         flex-direction: column;
-                        span{
+
+                        span {
                             font-weight: 700;
                         }
                     }
                 }
-                img{
-                    object-fit: cover;
+
+                .imgbox {
                     flex: 1;
-                    height: 250px;
+                    img {
+                        object-fit: cover;
+                        height: 100%;
+                        width: 100%;
+                        @include respond(md){
+                            height: 200px;
+                        }
+                    }
                 }
             }
         }

@@ -6,7 +6,8 @@ import './Navbar.scss'
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
-    const [activeSection, setActiveSection] = useState('home'); 
+    const [toggleNavbar, setToggleNavbar] = useState(false)
+    const [activeSection, setActiveSection] = useState('home');
 
     const links = [
         { text: 'Home', id: 'home' },
@@ -26,7 +27,7 @@ const Navbar = () => {
         // Handle active section based on scroll position
         const handleActiveSection = () => {
             const sections = links.map(link => document.getElementById(link.id));
-            
+
             let current = 'home';
 
             // Loop from bottom to top to prioritize lower sections
@@ -59,7 +60,14 @@ const Navbar = () => {
 
     return (
         <nav className={scrolled ? "scrolled" : "transparent"}>
-            <div className="logo">
+            <div className="logo"
+                onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById("home")?.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }}
+            >
                 <img src="./Logo.png" alt="Logo" />
             </div>
 
@@ -81,8 +89,30 @@ const Navbar = () => {
                 ))}
             </div>
 
-            <div className="hamburger">
-                <FaBars className="text-3xl" />
+            <div className={`hamburger ${toggleNavbar ? 'active' : ''}`} onClick={() => setToggleNavbar(!toggleNavbar)}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div className={`mobile-nav-overlay ${toggleNavbar ? 'active' : ''}`} onClick={() => setToggleNavbar(false)}>
+                <div className="mobile-nav-content" onClick={(e) => e.stopPropagation()}>
+                    {links.map((link) => (
+                        <a
+                            key={link.id}
+                            href={`#${link.id}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setToggleNavbar(false);
+                                document.getElementById(link.id)?.scrollIntoView({
+                                    behavior: 'smooth'
+                                });
+                            }}
+                        >
+                            {link.text}
+                        </a>
+                    ))}
+                </div>
             </div>
         </nav>
     );

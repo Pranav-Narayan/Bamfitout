@@ -70,7 +70,14 @@ const Home = () => {
                             </h1>
                         </motion.div>
                     </AnimatePresence>
-                    <button>Connect Us</button>
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById("contact")?.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }}
+                    >Connect Us</button>
                 </div>
                 <button onClick={nextSlide} className='changeSlide'> <FaArrowRight className='icon' /> </button>
             </div>

@@ -297,12 +297,6 @@ const Services = () => {
           </div>
         </button>
       </div>
-
-      <div className="services__drag-hint">
-        <MoveHorizontal size={18} />
-        <span>Swipe to explore</span>
-      </div>
-
       <div className="services__dots" role="tablist" aria-label="Service navigation">
         {Array.from({ length: totalDots }).map((_, index) => (
           <button

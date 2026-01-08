@@ -76,7 +76,7 @@ const Reviews = () => {
 
   return (
     <section
-      className="relative bg-cover bg-center bg-no-repeat"
+      className="relative bg-cover bg-center bg-no-repeat mt-20"
       style={{
         backgroundImage: `linear-gradient(to right, hsla(30, 10%, 10%, 0.85), hsla(30, 10%, 10%, 0.6)), url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&q=80')`,
       }}

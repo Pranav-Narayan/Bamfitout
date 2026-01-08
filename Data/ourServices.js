@@ -2,73 +2,85 @@ export const services = [
     {
         id: 1,
         image: "/Home-renovation.avif",
+        images: ["/Home-renovation.avif", "/Home-renovation1.avif", "/Home-renovation2.avif", "/Home-renovation3.avif", "/Home-renovation4.avif"],
         name: "Home Renovation",
-        des: "",
+        description: "Transform your living space with our comprehensive home renovation services. From structural changes to aesthetic upgrades, we breathe new life into your home, ensuring it reflects your style and meets your functional needs. Our team manages everything from initial design concepts to final finishing touches, working within your budget and timeline to deliver a seamless renovation experience that enhances your home's value and comfort.",
     },
     {
         id: 2,
         image: "/Commerical-project.avif",
+        images: ["/Commerical-project.avif", "/Commercial-project1.avif", "/Commercial-project2.avif", "/Commercial-project3.avif", "/Commercial-project4.avif","/Commercial-project5.avif"],
         name: "Commercial Projects",
-        des: "",
+        description: "We deliver top-tier commercial renovation solutions tailored to your business needs. Our team ensures minimal disruption to your operations while creating a modern, efficient, and professional environment. Whether it's retail outlets, corporate offices, or industrial spaces, we focus on functionality, branding, and aesthetics, providing innovative solutions that help your business stand out and operate smoothly in a competitive marketplace.",
     },
     {
         id: 3,
         image: "/office-fitout.avif",
+        images: ["/office-fitout.avif", "/office-fitout.avif", "/office-fitout.avif", "/office-fitout.avif"],
         name: "Office Fitout",
-        des: "",
+        description: "Optimize your workspace with our expert office fitout services. We design and build productive environments that enhance employee well-being and impress clients, maximizing every inch of your office space. Our solutions include ergonomic furniture, smart layouts, branding integration, and efficient lighting, all aimed at fostering collaboration and productivity in a comfortable setting tailored to your company's culture and needs.",
     },
     {
         id: 4,
         image: "/kitchenRenovation.avif",
+        images: ["/kitchenRenovation.avif", "/kitchenRenovation.avif", "/kitchenRenovation.avif", "/kitchenRenovation.avif"],
         name: "Kitchen Renovation",
-        des: "",
+        description: "Create the kitchen of your dreams. Whether you need a modern chef's kitchen, a cozy family gathering spot, or a sleek minimalist design, we handle cabinetry, countertops, plumbing, and lighting to deliver a stunning and functional heart of the home. Our team works closely with you to choose the best materials and layouts, ensuring your kitchen is both beautiful and practical for everyday use and entertaining guests.",
     },
     {
         id: 5,
         image: "/flooring.avif",
+        images: ["/flooring.avif", "/flooring.avif", "/flooring.avif", "/flooring.avif"],
         name: "Flooring Works",
-        desc: ""
+        description: "Upgrade your floors with our premium flooring installation services. We offer a wide range of materials including hardwood, tile, laminate, and vinyl, ensuring durable and beautiful surfaces for any room. Our experts help you select the right flooring that complements your interior style, provides long-lasting performance, and enhances the overall aesthetic appeal of your property, whether residential or commercial.",
     },
     {
         id: 6,
         image: "/Carpenterworks.avif",
+        images: ["/Carpenterworks.avif", "/Carpenterworks.avif", "/Carpenterworks.avif", "/Carpenterworks.avif"],
         name: "Carpentry Works",
-        desc: ""
+        description: "Our skilled carpenters provide custom woodwork solutions, from built-in wardrobes and shelving to intricate moldings and furniture repairs. We combine traditional craftsmanship with modern techniques to create bespoke pieces that fit perfectly with your interior design. We also offer restoration services to preserve and enhance the beauty of your existing wood fixtures, ensuring longevity and elegance in every project.",
     },
     {
         id: 7,
         image: "/electricalworks.jpeg",
+        images: ["/electricalworks.jpeg", "/electricalworks.jpeg", "/electricalworks.jpeg", "/electricalworks.jpeg"],
         name: "Electrical Works",
-        desc: ""
+        description: "Ensure safety and efficiency with our professional electrical services. From rewiring and lighting installation to smart home upgrades, our certified electricians handle all your power needs. We prioritize safety standards, energy efficiency, and modern technology integration to provide reliable electrical systems that support your lifestyle or business operations, reducing energy costs and preventing potential hazards.",
     },
     {
         id: 8,
         image: "/falseCeiling.avif",
+        images: ["/falseCeiling.avif", "/falseCeiling.avif", "/falseCeiling.avif", "/falseCeiling.avif"],
         name: "False ceiling",
-        desc: ""
+        description: "Enhance your interiors with modern false ceiling designs. We install gypsum, POP, and grid ceilings that improve acoustics, conceal wiring, and add a touch of elegance to your space. Our designs can be customized to suit any style, from minimalist to ornate, creating a refined look that elevates the overall ambiance of your rooms while also providing functional benefits like insulation and lighting integration.",
     },
     {
         id: 9,
         image: "/glasspartitions.avif",
+        images: ["/glasspartitions.avif", "/glasspartitions.avif", "/glasspartitions.avif", "/glasspartitions.avif"],
         name: "Glass Partitions",
-        desc: ""
+        description: "Add openness and style with our glass partition solutions. Perfect for offices and modern homes, our frameless and framed glass walls create distinct areas without sacrificing light or visual flow. They enhance space perception, promote transparency, and can be customized with frosted or tinted glass for privacy, making them an ideal choice for contemporary interior designs that emphasize openness and elegance.",
     },
     {
         id: 10,
         image: "/bathroomRenovation.avif",
+        images: ["/bathroomRenovation.avif", "/bathroomRenovation.avif", "/bathroomRenovation.avif", "/bathroomRenovation.avif"],
         name: "Bathroom Renovation",
-        desc: ""
+        description: "Turn your bathroom into a personal space. We handle everything from tile selection and sanitary ware installation to plumbing and lighting, delivering a clean, modern, and relaxing retreat. Our team focuses on maximizing space, durability, and style, offering innovative storage solutions, eco-friendly fixtures, and luxurious finishes to create a spa-like atmosphere in your home or commercial property.",
     },
     {
         id: 11,
         image: "/Painting.avif",
+        images: ["/Painting.avif", "/Painting.avif", "/Painting.avif", "/Painting.avif"],
         name: "Painting",
-        desc: ""
+        description: "Refresh your walls with our expert painting services. We use high-quality paints and precise techniques to deliver a flawless finish, adding color and character to your interiors and exteriors. Whether it's a single accent wall or a full property makeover, our team ensures clean, neat work with minimal disruption, helping you achieve the perfect ambiance for your space with vibrant or subtle shades tailored to your preferences.",
     },
     {
         id: 12,
         image: "/Waterproofing.avif",
+        images: ["/Waterproofing.avif", "/Waterproofing.avif", "/Waterproofing.avif", "/Waterproofing.avif"],
         name: "Waterproofing",
-        desc: ""
+        description: "Protect your property from water damage with our specialized waterproofing solutions. We treat terraces, basements, and wet areas to prevent leaks and ensure the longevity of your building structure. Our techniques include the application of advanced waterproof membranes, sealants, and drainage solutions, providing you peace of mind against water-related issues, mold, and structural deterioration, especially in areas prone to heavy rainfall or moisture.",
     },
-]
+];

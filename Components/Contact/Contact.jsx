@@ -12,11 +12,15 @@ const Contact = () => {
     });
     const [errors, setErrors] = useState({});
     const [consent, setConsent] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState('');
+    const [serverError, setServerError] = useState('');
+
 
     const validate = () => {
         const newErrors = {};
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phoneRegex = /^[0-9]{9,15}$/; // Basic validation: 9-15 digits
+        const phoneRegex = /^[0-9]{9,15}$/;
 
         if (!formData.name.trim()) newErrors.name = 'Name is required';
 
@@ -39,22 +43,44 @@ const Contact = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-        // Clear error when user types
-        if (errors[name]) {
-            setErrors({ ...errors, [name]: '' });
-        }
+        if (errors[name]) setErrors({ ...errors, [name]: '' });
     };
 
     const handleClear = (field) => {
         setFormData({ ...formData, [field]: '' });
     };
 
-    const handleSubmit = () => {
-        if (validate()) {
-            alert('Form submitted successfully!');
-            // Reset form or handle actual submission here
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setSuccess('');
+        setServerError('');
+
+        if (!consent) return;
+        if (!validate()) return;
+        try {
+            setLoading(true);
+
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok || !data.success) {
+                throw new Error(data.error || 'Failed to send message');
+            }
+
+            setSuccess('Message sent successfully! We will contact you soon.');
             setFormData({ name: '', email: '', phone: '', message: '' });
             setConsent(false);
+
+        } catch (error) {
+            console.error("Submission Error:", error);
+            setServerError(error.message || 'Something went wrong. Please try again later.');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -124,15 +150,27 @@ const Contact = () => {
                         />
                         <p>By sending an enquiry, I allow BAM interiors & Events to contact me for more details.</p>
                     </div>
+                    {success && <p className="success-message">{success}</p>}
+                    {serverError && <p className="error-message">{serverError}</p>}
                     <div className='buttons'>
                         <button
-                            disabled={!consent}
                             onClick={handleSubmit}
-                            style={{ opacity: consent ? 1 : 0.5, cursor: consent ? 'pointer' : 'not-allowed' }}
+                            type="submit"
+                            disabled={!consent || loading}
+                            style={{
+                                opacity: consent ? 1 : 0.5,
+                                cursor: consent ? 'pointer' : 'not-allowed'
+                            }}
                         >
-                            Send Message
+                            {loading ? 'Sending...' : 'Send Message'}
                         </button>
-                        <button onClick={() => window.location.href = 'tel:+971581104847'}>Make a Call</button>
+
+                        <button
+                            type="button"
+                            onClick={() => window.location.href = 'tel:+971581104847'}
+                        >
+                            Make a Call
+                        </button>
                     </div>
                 </div>
             </div>

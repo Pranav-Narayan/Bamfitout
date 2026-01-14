@@ -62,7 +62,7 @@ const Footer = () => {
             </div>
             <div>
               <p><MdEmail />Email</p>
-              <p>Connect@bamfitout.com</p>
+              <p>info@bamfitout.com</p>
             </div>
             <div>
               <p><FaLocationDot />Location</p>

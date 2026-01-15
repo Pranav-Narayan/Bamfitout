@@ -7,6 +7,10 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Footer = () => {
 
+  const whatsappNumber = "971581104847";
+  const message = "Hi I am interested in your services";
+
+
   const links = [
     { text: 'Home', id: 'home' },
     { text: 'About', id: 'about' },
@@ -30,9 +34,8 @@ const Footer = () => {
           <img src="/Logo.png" alt="" className='logo' />
           <p>BAM Interiors is a professional design and event solutions company dedicated to creating refined interior spaces and well-executed events. We focus on quality, precision, and client satisfaction, delivering thoughtful results with a commitment to excellence.</p>
           <div className='socials'>
-            <img src="/Icons/instagram.png" alt="" />
-            <img src="/Icons/facebook.png" alt="" />
-            <img src="/Icons/whatsapp.png" alt="" />
+            <a href="https://www.instagram.com/bam_interiors_dxb?igsh=Z3l5M3IzZnpyMzRq" target="_blank"><img src="/Icons/instagram.png" alt=""/></a>
+            <a href={`https://wa.me/${whatsappNumber}?text=${message}`} target="_blank"><img src="/Icons/whatsapp.png" alt="" /></a>
           </div>
         </div>
         <div className='options'>

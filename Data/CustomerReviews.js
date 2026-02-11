@@ -4,7 +4,7 @@ export const reviews = [
     id: 1,
     name: "Ayesha Khan",
     gender:"Female",
-    review: "BAM Interior & Events transformed our villa beautifully. The team was professional, creative and delivered exactly what we envisioned. Highly recommended!",
+    review: "BAM Interior transformed our villa beautifully. The team was professional, creative and delivered exactly what we envisioned. Highly recommended!",
     rating: 5
   },
   {
@@ -18,7 +18,7 @@ export const reviews = [
     id: 3,
     name: "Sara Al Mansoori",
     gender:"Female",
-    review: "We hired BAM Interior & Events for our engagement celebration and the decor was absolutely stunning. They made our day unforgettable.",
+    review: "We hired BAM Interior for our engagement celebration and the decor was absolutely stunning. They made our day unforgettable.",
     rating: 5
   },
   {

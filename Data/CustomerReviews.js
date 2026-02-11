@@ -18,7 +18,7 @@ export const reviews = [
     id: 3,
     name: "Sara Al Mansoori",
     gender:"Female",
-    review: "We hired BAM Interior for our engagement celebration and the decor was absolutely stunning. They made our day unforgettable.",
+    review: "BAM Interiors did an amazing job designing our home interiors with a perfect blend of style and functionality. The craftsmanship, finishing, and attention to detail truly exceeded our expectations.",
     rating: 5
   },
   {

@@ -39,7 +39,7 @@ export const reviews = [
     id: 6,
     name: "Omar Hassan",
     gender:"Male",
-    review: "BAM Interior & Events handled the wedding decoration for my sister. Everything was elegant, organized and delivered on time. Truly impressive work.",
+    review: "BAM Interiors transformed our office into a modern, highly functional workspace with outstanding attention to detail. The team was professional, on time, and delivered quality beyond our expectations.",
     rating: 5
   }
 ];
